@@ -2,25 +2,85 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
+
+$headerColor:HSLA(3, 92%, 19%, 1);
 // Custom Styles
-body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+body{
+  background: url('http://www.sfdm.scad.edu/faculty/mkesson/vsfx319/wip/wip_winter2013/vsfx319.2/olivia_ramsden/kettle/Wood_floor_bloody.jpg');
+  background-repeat: no-repeat;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+header{
+  background-color:$headerColor;
+  opacity:.7;
+  .topBanner{
+    display: block;
+    font-family: 'UnifrakturCook', cursive;
+    text-align: center;
+    font-size: 5em;
+    padding:.2em;
+  }
+}
+
+
+.container{
+  width:80%;
+  margin-right:auto;
+  margin-left:auto;
+  margin-top:3em;
+  overflow:auto;
+
+
+  .heroContainer{
+    float:left;
+    border-style:solid 1px;
+    width:25%;
+    //background-color:$headerColor;
+
+    ul{
+      padding:0;
+    }
+
+      .heroCards{
+        width: 90%;
+        height: 17em;
+        list-style: none;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 0.5em;
+        margin-bottom: .5em;
+        background-color:HSLA(43, 61%, 63%, 1);
+        border-radius:5px;
+
+      }
+  }
+
+  .middleContainer{
+    width:50%;
+  }
+
+  .enemyContainer{
+    float:right;
+    border-style:solid 1px;
+    margin-right:auto;
+    margin-left:auto;
+    width:25%;
+    //background-color:$headerColor;
+
+      ul{
+        padding:0
+      }
+
+      .enemyCards{
+        width: 90%;
+        height: 17em;
+        list-style: none;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 0.5em;
+        margin-bottom: .5em;
+        background-color:HSLA(36, 3%, 37%, 1);
+        border-radius:5px;
+      }
   }
 }
