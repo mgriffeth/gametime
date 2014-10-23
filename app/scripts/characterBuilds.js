@@ -29,9 +29,7 @@ var Hero = function (options) {
     }else{
       console.log('Miss!');
     }
-    /*  if (target.health <= 0){
-        console.log(target.name +" is dead...")
-      }*/
+    refresh();
     };
   this.special = function(target){
     hit = Math.floor(Math.random() * 2);
@@ -45,6 +43,7 @@ var Hero = function (options) {
     }else if (this.mana <= 0){
         console.log(this.name + " is out of mana");
     }
+    refresh();
   };
 };
 
@@ -72,9 +71,7 @@ var Enemy = function (options)  {
     }else{
       console.log('Miss!');
     }
-    /*  if (target.health <= 0){
-        console.log(target.name +" is dead...")
-      }*/
+    refresh();
     };
   this.special = function(target){
   hit = Math.floor(Math.random() * 2);
@@ -88,6 +85,7 @@ var Enemy = function (options)  {
   }else if (this.mana <= 0){
       console.log(this.name + " is out of mana");
     }
+    refresh();
   };
 };
 //::::::Instances::::::://

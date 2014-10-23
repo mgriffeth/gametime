@@ -1,24 +1,36 @@
 //on click hero attack enemy
 //then enemy retaliate
 //  refreshes chacter info
-var cleanDead =function(heros, enemies){
+var deadHeros,
+    deadEnemies;
+
+
+var findDead =function(heros, enemies){
+  //find dead heros
   heros.forEach(function(hero){
     if(hero.health <= 0){
-     x = heros.indexOf(hero);
-     heros.splice(x, x)
-     console.log("hero " + heros[x].name + " died");
+     deadHeros = heros.indexOf(hero);
+     console.log("hero " + heros[deadHeros].name + " died");
       }
+  //find dead enemies
     enemies.forEach(function(enemy){
       if(enemy.health <= 0){
-     y = enemies.indexOf(enemy);
-     enemies.splice(y, y)
-     console.log("enemy " + enemies[y].name + " died");
+     deadEnemies = enemies.indexOf(enemy);
+     console.log("enemy " + enemies[deadEnemies].name + " died");
       }
     });
   });
 };
+
+var cleanDead = function(){
+  findDead(heros,enemies);
+  heros.splice(deadHeros,deadHeros);
+  enemies.splice(deadEnemies,deadEnemies);
+};
+
 var refresh = function(){
-  cleanDead(heros,enemies);
+  cleanDead();
   renderHeros(heros);
   renderEnemies(enemies);
+
 };
