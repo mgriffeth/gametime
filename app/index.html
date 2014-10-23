@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>gametime</title>
+    <title>It's Killin Time!</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/vendor.css -->
@@ -32,17 +32,7 @@
     <div class="container">
 
       <div class="heroContainer">
-        <ul >
-
-          <li class="cards heroCards">
-            <span class="health"></span>
-            <img class="cardImg" src="" alt="" />
-            
-          </li>
-
-          <li class="cards heroCards"></li>
-
-          <li class="cards heroCards"></li>
+        <ul class="aList">
 
         </ul>
       </div>
@@ -51,13 +41,37 @@
       </div>
 
       <div class="enemyContainer">
-        <ul >
-          <li class="cards enemyCards"></li>
-          <li class="cards enemyCards"></li>
-          <li class="cards enemyCards"></li>
+        <ul class="bList">
+
         </ul>
+
       </div>
     </div>
+
+
+    <script id="heroTemplate" type="text/template">
+      <li class="cards heroCards">
+        <span class="health">Health:<%= health %></span>
+        <span class="mana">Mana: <%= mana %></span>
+        <div class="imgBox">
+          <img class="cardImg" src=http://www.justjon.net/wp-content/uploads/2012/02/black-mage.png alt="" />
+        </div>
+        <span class="attack">Attack: <%= attackMax %></span>
+        <span class="special">Special: <%= specialMax %></span>
+      </li>
+    </script>
+
+    <script id="enemyTemplate" type="text/template">
+      <li class="cards enemyCards">
+        <span class="health">Health:<%= health %></span>
+        <span class="mana">Mana: <%= mana %></span>
+        <div class="imgBox">
+          <img class="cardImg" src=http://www.justjon.net/wp-content/uploads/2012/02/black-mage.png alt="" />
+        </div>
+        <span class="attack">Attack: <%= attackMax %></span>
+        <span class="special">Special: <%= specialMax %></span>
+      </li>
+    </script>
 
 
 
