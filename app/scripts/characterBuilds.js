@@ -61,11 +61,16 @@ var Enemy = function (options)  {
 //----heros----//
 var hero = new Hero({health:100,attackMax:100, specialMax: 1000});
 
-var mage = new Hero({name: 'Omniscent Bob', health:100, mana: 10, attackMax:15, specialMax: 1000, isAlive: true});
+var cleric = new Hero({name: 'Omniscent Bob', health:100, mana: 10, attackMax:15, specialMax: 1000, isAlive: true});
 
-var fighter = new Hero({name: 'Simon Buttkicker', health:200, mana: 5, attackMax:35, specialMax: 1000, isAlive: true});
+var paladin = new Hero({name: 'Simon Buttkicker', health:200, mana: 5, attackMax:35, specialMax: 1000, isAlive: true});
 
-var rouge = new Hero({name: 'Yolanda er..just Yolanda', health:150, mana:6, attackMax:25, specialMax: 1000, isAlive: true});
+var theif = new Hero({name: 'Yolanda er..just Yolanda', health:150, mana:6, attackMax:25, specialMax: 1000, isAlive: true});
+
+
+
+var heros = {mage: cleric, warrior: paladin, rouge: theif}
+
 
 
 //---enemies---//
@@ -76,3 +81,7 @@ var necromancer = new Enemy({name: 'Rotten Bob', health:100, mana: 10, attackMax
 var marauder = new Enemy({name: 'Throat Cutter', health:200, mana: 5, attackMax:35, specialMax: 1000, isAlive: true});
 
 var assassin = new Enemy({name: 'Death Bringer', health:150, mana:6, attackMax:25, specialMax: 1000, isAlive: true});
+
+
+
+var enemies = {mage: necromancer, warrior: marauder, rouge: assassin}
