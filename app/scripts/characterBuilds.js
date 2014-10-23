@@ -132,9 +132,6 @@ var heros = [ heroMage, heroFighter, heroStealth];
 
 var heroic_template =$('#heroTemplate').html();
 var rendered_heroic_template = _.template(heroic_template);
-
-
-
 var renderHeros = function(heros) {
   $('.aList').empty();
   heros.forEach(function(hero){
@@ -184,9 +181,6 @@ var enemies = [enemyMage, enemyFighter, enemyStealth];
 
 var enemy_template =$('#enemyTemplate').html();
 var rendered_enemy_template = _.template(enemy_template);
-
-
-
 var renderEnemies = function(enemies) {
   $('.bList').empty();
   enemies.forEach(function(enemy){
@@ -195,8 +189,3 @@ var renderEnemies = function(enemies) {
 });};
 
 renderEnemies(enemies);
-
-var refresh = function(){
-  renderHeros(heros);
-  renderEnemies(enemies);
-};
