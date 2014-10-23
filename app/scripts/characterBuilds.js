@@ -6,21 +6,29 @@ console.log("Let's get ready for some D&D style shennanigans!");
 
 var Hero = function (options) {
   options = options || {};
+  this.class = options.class;
   this.name = options.name;
   this.health = options.health;
   this.mana = options.mana || 0;
   this.attackMax = options.attackMax;
   this.specialMax= options.specialMax;
+
   //this.isAlive = options.isAlive
   this.attack = function(target){
-    target.health -= (_.random(options.attackMax));
+    hit = Math.floor(Math.random() * 2);
+    if(hit){
+      target.health -= (_.random(options.attackMax));
+      console.log('Hit!');
+    }else{
+      console.log('Miss!');
+    }
     /*  if (target.health <= 0){
         console.log(target.name +" is dead...")
       }*/
     };
   this.special = function(target){
     while(this.mana > 0){
-      target.health = target.health - (_.random(specialMax));
+      target.health = target.health - (_.random(options.specialMax));
       this.mana = (this.mana -= 1);
     }
   };
@@ -30,6 +38,7 @@ var Hero = function (options) {
 
 var Enemy = function (options)  {
   options = options || {};
+  this.class = options.class;
   this.name = options.name;
   this.health = options.health;
   this.mana = options.mana || 0;
@@ -61,27 +70,27 @@ var Enemy = function (options)  {
 //----heros----//
 var hero = new Hero({health:100,attackMax:100, specialMax: 1000});
 
-var cleric = new Hero({name: 'Omniscent Bob', health:100, mana: 10, attackMax:15, specialMax: 1000, isAlive: true});
+var heroMage = new Hero({class: 'cleric', name: 'Omniscent Bob', health:100, mana: 10, attackMax:15, specialMax: 1000, isAlive: true});
 
-var paladin = new Hero({name: 'Simon Buttkicker', health:200, mana: 5, attackMax:35, specialMax: 1000, isAlive: true});
+var heroFighter = new Hero({class: 'paladin', name: 'Simon Buttkicker', health:200, mana: 5, attackMax:35, specialMax: 1000, isAlive: true});
 
-var theif = new Hero({name: 'Yolanda er..just Yolanda', health:150, mana:6, attackMax:25, specialMax: 1000, isAlive: true});
+var heroStealth = new Hero({class: 'theif', name: 'Yolanda er..just Yolanda', health:150, mana:6, attackMax:25, specialMax: 1000, isAlive: true});
 
 
 
-var heros = {mage: cleric, warrior: paladin, rouge: theif}
+var heros = [ heroMage, heroFighter, heroStealth]
 
 
 
 //---enemies---//
 var enemy = new Enemy({health:100,attackMax:100, specialMax: 1000});
 
-var necromancer = new Enemy({name: 'Rotten Bob', health:100, mana: 10, attackMax:15, specialMax: 1000, isAlive: true});
+var enemyMage = new Enemy({class: 'necromancer',name: 'Rotten Bob', health:100, mana: 10, attackMax:15, specialMax: 1000, isAlive: true});
 
-var marauder = new Enemy({name: 'Throat Cutter', health:200, mana: 5, attackMax:35, specialMax: 1000, isAlive: true});
+var enemyFighter = new Enemy({class: 'marauder', name: 'Crotch Kicker', health:200, mana: 5, attackMax:35, specialMax: 1000, isAlive: true});
 
-var assassin = new Enemy({name: 'Death Bringer', health:150, mana:6, attackMax:25, specialMax: 1000, isAlive: true});
+var enemyStealth = new Enemy({class:'assassin', name: 'Puppy Kicker', health:150, mana:6, attackMax:25, specialMax: 1000, isAlive: true});
 
 
 
-var enemies = {mage: necromancer, warrior: marauder, rouge: assassin}
+var enemies = [enemyMage, enemyFighter, enemyStealth]

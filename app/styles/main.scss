@@ -30,6 +30,17 @@ header{
   margin-top:3em;
   overflow:auto;
 
+    .cards{
+      width: 90%;
+      height: 17em;
+      list-style: none;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 0.5em;
+      margin-bottom: .5em;
+      border-radius:5px;
+      opacity:.7;
+    }
 
   .heroContainer{
     float:left;
@@ -39,19 +50,11 @@ header{
 
     ul{
       padding:0;
-    }
+      }
 
       .heroCards{
-        width: 90%;
-        height: 17em;
-        list-style: none;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 0.5em;
-        margin-bottom: .5em;
         background-color:HSLA(43, 61%, 63%, 1);
-        border-radius:5px;
-        opacity:.7;
+
       }
   }
 
@@ -72,16 +75,9 @@ header{
       }
 
       .enemyCards{
-        width: 90%;
-        height: 17em;
-        list-style: none;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 0.5em;
-        margin-bottom: .5em;
+
         background-color:HSLA(36, 3%, 37%, 1);
-        border-radius:5px;
-        opacity:.7;
+
       }
   }
 }
