@@ -33,16 +33,16 @@
 
       <div class="heroContainer">
         <ul class="aList">
-
         </ul>
       </div>
 
       <div class="middleContainer">
+        <button class="attackBtn">ATK</button>
+        <button class="specialBtn">SP.ATK</button>
       </div>
 
       <div class="enemyContainer">
         <ul class="bList">
-
         </ul>
 
       </div>
@@ -52,9 +52,10 @@
     <script id="heroTemplate" type="text/template">
       <li class="cards heroCards">
         <span class="health">Health:<%= health %></span>
+        <span class="name"><%= name %></span>
         <span class="mana">Mana: <%= mana %></span>
         <div class="imgBox">
-          <img class="cardImg" src=http://www.justjon.net/wp-content/uploads/2012/02/black-mage.png alt="" />
+          <img class="cardImg" src='<%= avatar%>' alt="" />
         </div>
         <span class="attack">Attack: <%= attackMax %></span>
         <span class="special">Special: <%= specialMax %></span>
@@ -64,9 +65,10 @@
     <script id="enemyTemplate" type="text/template">
       <li class="cards enemyCards">
         <span class="health">Health:<%= health %></span>
+        <span class="name"><%= name %></span>
         <span class="mana">Mana: <%= mana %></span>
         <div class="imgBox">
-          <img class="cardImg" src=http://www.justjon.net/wp-content/uploads/2012/02/black-mage.png alt="" />
+          <img class="cardImg" src='<%= avatar%>' alt="" />
         </div>
         <span class="attack">Attack: <%= attackMax %></span>
         <span class="special">Special: <%= specialMax %></span>
@@ -86,7 +88,7 @@
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
         <script src="scripts/characterBuilds.js"></script>
-        <script src="scripts/main.js"></script>
+        <script src="scripts/handleDead.js"></script>
         <!-- endbuild -->
 </body>
 </html>

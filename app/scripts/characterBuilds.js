@@ -8,19 +8,12 @@ var Hero = function (options) {
   options = options || {};
   this.class = options.class;
   this.name = options.name;
+  this.avatar = options.avatar;
   this.health = options.health;
-  this.isAlive = options.isAlive;
+  this.isDead = options.isDead;
   this.mana = options.mana || 0;
   this.attackMax = options.attackMax;
   this.specialMax = options.specialMax;
-  /*this.isDead = function(){
-    if(this.health <= 0){
-      this.isAlive = false;
-      console.log(this.name + " is dead.")
-    }
-  }*/
-
-  //this.isAlive = options.isAlive
   this.attack = function(target){
     hit = Math.floor(Math.random() * 2);
     if(hit){
@@ -53,14 +46,10 @@ var Enemy = function (options)  {
   options = options || {};
   this.class = options.class;
   this.name = options.name;
+  this.avatar = options.avatar;
   this.health = options.health;
-  this.isAlive = options.isAlive;
+  this.isDead = options.isDead;
   this.mana = options.mana || 0;
-  this.attackMax = options.attackMax;
-  this.specialMax= options.specialMax;
-  this.attack = options.attack;
-  this.special = options.special;
-//  this.isAlive = options.isAlive;
   this.attackMax = options.attackMax;
   this.specialMax= options.specialMax;
   this.attack = function(target){
@@ -95,33 +84,36 @@ var Enemy = function (options)  {
 var hero = new Hero({health:100,attackMax:100, specialMax: 1000});
 
 var heroMage = new Hero({
-class: 'cleric',
+class: 'Sorceror',
  name: 'Omniscient Bob',
+ avatar: 'http://fenrir.finalfantasyq.com/battleground/ss3/ss3aniamakusa1.gif',
  health:100,
+ isDead: false,
  mana: 10,
  attackMax:15,
  specialMax: 1000,
- isAlive: true
 });
 
 var heroFighter = new Hero({
-class: 'paladin',
+class: 'Brawler',
  name: 'Simon Buttkicker',
+ avatar: 'http://fenrir.finalfantasyq.com/battleground/ss3/ss3anigaira1.gif',
  health:200,
+ isDead: false,
  mana: 5,
  attackMax:35,
  specialMax: 1000,
- isAlive: true
 });
 
 var heroStealth = new Hero({
-  class: 'theif',
-  name: 'Yolanda er..just Yolanda',
+  class: 'Theif',
+  name: 'Jackie',
+  avatar:'http://fenrir.finalfantasyq.com/battleground/ss3/ss3aninakoruru1.gif',
   health:150,
+  isDead: false,
   mana:6,
   attackMax:25,
   specialMax: 1000,
-  isAlive: true
 });
 
 
@@ -133,7 +125,9 @@ var rendered_heroic_template = _.template(heroic_template);
 var renderHeros = function(heros) {
   $('.aList').empty();
   heros.forEach(function(hero){
-  console.log(hero);
+    console.log(hero);
+  if(hero.isDead){
+    console.log( hero.name + " isDead");}
   $('.aList').append(rendered_heroic_template(hero));
 });};
 
@@ -144,33 +138,36 @@ renderHeros(heros);
 var enemy = new Enemy({health:100,attackMax:100, specialMax: 1000});
 
 var enemyMage = new Enemy({
-  class: 'necromancer',
-  name: 'Rotten Bob',
+  class: 'Necromancer',
+  name: 'Morgana',
+  avatar:'http://fenrir.finalfantasyq.com/battleground/ss5/ss5animizukikick1.gif',
   health:100,
+  isDead: false,
   mana: 10,
   attackMax:15,
   specialMax: 1000,
-  isAlive: true
 });
 
 var enemyFighter = new Enemy({
-  class: 'marauder',
+  class: 'Marauder',
   name: 'Crotch Kicker',
+  avatar:'http://fenrir.finalfantasyq.com/battleground/ss3/ss3anizankuro1.gif',
   health:200,
+  isDead: false,
   mana: 5,
   attackMax:35,
   specialMax: 1000,
-  isAlive: true
 });
 
 var enemyStealth = new Enemy({
-  class:'assassin',
+  class:'Assassin',
   name: 'Puppy Puncher',
+  avatar: 'http://fenrir.finalfantasyq.com/battleground/ss3/ss3anihanzo1.gif',
   health:150,
+  isDead: false,
   mana:6,
   attackMax:25,
   specialMax: 1000,
-  isAlive: true
 });
 
 
@@ -183,6 +180,8 @@ var renderEnemies = function(enemies) {
   $('.bList').empty();
   enemies.forEach(function(enemy){
   console.log(enemy);
+  if(enemy.isDead){
+    console.log( enemy.name + " isDead");}
   $('.bList').append(rendered_enemy_template(enemy));
 });};
 
