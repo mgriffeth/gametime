@@ -22,6 +22,17 @@ var findDead =function(heros, enemies){
     });
 
 };
+var evalWinner = function(){
+  if((heros.length > 0) && (enemies.length === 0)){
+    console.log('YOU WIN!');
+  }else if((enemies.length > 0) && (heros.length === 0)){
+    console.log('YOU LOSE.');
+  }
+};
+
+
+
+
 
 var cleanDead = function(){
   heros = _.reject(heros,function(hero){return hero.health <= 0 });
@@ -32,4 +43,5 @@ var refresh = function(){
   cleanDead();
   renderHeros(heros);
   renderEnemies(enemies);
+  evalWinner();
 };
