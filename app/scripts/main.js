@@ -2,11 +2,15 @@
 //then enemy retaliate
 //  refreshes chacter info
 
-$('.heroContainer').on('click','heroCards',function(){
+$('.heroContainer').on('click','.heroCards',function(){
+  $('.heroCards').removeClass('activeHero')
   $(this).addClass('activeHero');
-  console.log("i'm here")
 })
 
+$('.enemyContainer').on('click','.enemyCards',function(){
+  $('.enemyCards').removeClass('activeEnemy')
+  $(this).addClass('activeEnemy');
+})
 
 $('.attackBtn').click(function(){
   console.log('ATTK');
