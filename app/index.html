@@ -25,7 +25,7 @@
   <body>
     <header>
     <div class="topBanner">
-      Ye Olde Killin Game
+      Fight!
     </div>
     </header>
 
@@ -50,9 +50,9 @@
 
 
     <script id="heroTemplate" type="text/template">
-      <li id="heroicLi" class="cards heroCards">
+      <li class="cards heroCards" data-name='<%=name %>'>
         <span class="health">Health:<%= health %></span>
-        <span class="name"><%= name %></span>
+        <span id="heroName" class="name"><%= name %></span>
         <span class="mana">Mana: <%= mana %></span>
         <div class="imgBox">
           <img class="cardImg" src='<%= avatar%>' alt="" />
@@ -63,9 +63,9 @@
     </script>
 
     <script id="enemyTemplate" type="text/template">
-      <li class="cards enemyCards">
+      <li class="cards enemyCards"data-name='<%=name %>'>
         <span class="health">Health:<%= health %></span>
-        <span class="name"><%= name %></span>
+        <span id="enemyName" class="name"><%= name %></span>
         <span class="mana">Mana: <%= mana %></span>
         <div class="imgBox">
           <img class="cardImg" src='<%= avatar%>' alt="" />

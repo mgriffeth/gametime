@@ -14,6 +14,7 @@ var Hero = function (options) {
   this.mana = options.mana || 0;
   this.attackMax = options.attackMax;
   this.specialMax = options.specialMax;
+
   this.attack = function(target){
     hit = Math.floor(Math.random() * 2);
     if(hit){
@@ -84,6 +85,7 @@ var Enemy = function (options)  {
 var hero = new Hero({health:100,attackMax:100, specialMax: 1000});
 
 var heroMage = new Hero({
+
 class: 'Sorceror',
  name: 'Omniscient Bob',
  avatar: 'http://fenrir.finalfantasyq.com/battleground/ss3/ss3aniamakusa1.gif',
@@ -170,7 +172,7 @@ var enemyStealth = new Enemy({
   specialMax: 1000,
 });
 
-
+//$( ".enemyCards" ).data( "name", enemy.name );
 
 var enemies = [enemyMage, enemyFighter, enemyStealth];
 
@@ -179,6 +181,7 @@ var rendered_enemy_template = _.template(enemy_template);
 var renderEnemies = function(enemies) {
   $('.bList').empty();
   enemies.forEach(function(enemy){
+
   console.log(enemy);
   if(enemy.isDead){
     console.log( enemy.name + " isDead");}
