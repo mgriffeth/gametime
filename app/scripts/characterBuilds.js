@@ -82,7 +82,7 @@ var Enemy = function (options)  {
 
 
 //----heros----//
-var hero = new Hero({health:100,attackMax:100, specialMax: 1000});
+
 
 var heroMage = new Hero({
 
@@ -137,7 +137,7 @@ renderHeros(heros);
 
 
 //---enemies---//
-var enemy = new Enemy({health:100,attackMax:100, specialMax: 1000});
+
 
 var enemyMage = new Enemy({
   class: 'Necromancer',
@@ -181,7 +181,6 @@ var rendered_enemy_template = _.template(enemy_template);
 var renderEnemies = function(enemies) {
   $('.bList').empty();
   enemies.forEach(function(enemy){
-
   console.log(enemy);
   if(enemy.isDead){
     console.log( enemy.name + " isDead");}

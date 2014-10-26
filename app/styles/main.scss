@@ -13,12 +13,19 @@ body{
 header{
   background-color:$headerColor;
   opacity:.7;
+
+  .good{
+    float:left;
+  }
   .topBanner{
     display: block;
     font-family: 'UnifrakturCook', cursive;
     text-align: center;
     font-size: 5em;
     padding:.2em;
+  }
+  .bad{
+    float:right;
   }
 }
 
@@ -100,7 +107,10 @@ header{
 
       }
       .activeHero{
-        opacity:1;
+        opacity: 1;
+        position: absolute;
+        width: 423px;
+        left: 500px;
       }
   }
 
@@ -131,7 +141,10 @@ header{
 
       }
       .activeEnemy{
-        opacity:1;
+        opacity: 1;
+        position: absolute;
+        width: 423px;
+        right: 500px;
       }
     }
 }
