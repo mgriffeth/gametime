@@ -1,3 +1,8 @@
-## Yo, I'm a Readme
+gametome
+-a turn based battle game
+How to use it:
+  Clone my repo
+  Run npm install
+  Run bower install
+libraries used (jQuery, Underscore)
 
-You should probably update me so people looking at your code have an idea what it is being used for :)
