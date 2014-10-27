@@ -1,4 +1,5 @@
-gametome
+gametime
+_________________________
 -a turn based battle game
 How to use it:
   Clone my repo
