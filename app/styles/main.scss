@@ -16,6 +16,7 @@ header{
 
   .good{
     float:left;
+    color:white;
   }
   .topBanner{
     display: block;
@@ -26,6 +27,7 @@ header{
   }
   .bad{
     float:right;
+    color:orange;
   }
 }
 
@@ -121,6 +123,18 @@ header{
     margin-top: 15px;
   //  background-color: HSLA(3, 92%, 19%, 1);
     opacity: .9;
+  //  position:relative;
+
+    .attackBtn{
+      position:absolute;
+      left: 42%;
+      top:114px;
+    }
+    .specialBtn{
+      position:absolute;
+      right: 42%;
+      top:114px;
+    }
   }
 
   .enemyContainer{
@@ -147,4 +161,7 @@ header{
         right: 500px;
       }
     }
+}
+.hide{
+  display:none;
 }

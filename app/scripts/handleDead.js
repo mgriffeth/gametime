@@ -24,8 +24,10 @@ var findDead =function(heros, enemies){
 };
 var evalWinner = function(){
   if((heros.length > 0) && (enemies.length === 0)){
+    $('.good').removeClass('hide');
     console.log('YOU WIN!');
   }else if((enemies.length > 0) && (heros.length === 0)){
+    $('.bad').removeClass('hide');
     console.log('YOU LOSE.');
   }
 };
