@@ -1,0 +1,78 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>FIGHT!</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+<link href='http://fonts.googleapis.com/css?family=UnifrakturCook:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    <header>
+    <div class="topBanner">
+      <span class="good hide">YOU WIN!</span>
+      Fight!
+      <span class="bad hide">YOU LOSE!</span>
+    </div>
+    </header>
+
+    <div class="container">
+
+      <div class="heroContainer">
+        <ul class="aList">
+        </ul>
+      </div>
+
+      <div class="middleContainer">
+        <button class="attackBtn">ATK</button>
+        <button class="specialBtn">SP.ATK</button>
+      </div>
+
+      <div class="enemyContainer">
+        <ul class="bList">
+        </ul>
+
+      </div>
+    </div>
+
+
+    <script id="heroTemplate" type="text/template">
+      <li class="cards heroCards" data-name='<%=name %>'>
+        <span class="health">Health:<%= health %></span>
+        <span id="heroName" class="name"><%= name %></span>
+        <span class="mana">Mana: <%= mana %></span>
+        <div class="imgBox">
+          <img class="cardImg" src='<%= avatar%>' alt="" />
+        </div>
+        <span class="attack">Attack: <%= attackMax %></span>
+        <span class="special">Special: <%= specialMax %></span>
+      </li>
+    </script>
+
+    <script id="enemyTemplate" type="text/template">
+      <li class="cards enemyCards"data-name='<%=name %>'>
+        <span class="health">Health:<%= health %></span>
+        <span id="enemyName" class="name"><%= name %></span>
+        <span class="mana">Mana: <%= mana %></span>
+        <div class="imgBox">
+          <img class="cardImg" src='<%= avatar%>' alt="" />
+        </div>
+        <span class="attack">Attack: <%= attackMax %></span>
+        <span class="special">Special: <%= specialMax %></span>
+      </li>
+    </script>
+
+
+
+
+    <script src="scripts/vendor.js"></script>
+
+        <script src="scripts/main.js"></script>
+</body>
+</html>
